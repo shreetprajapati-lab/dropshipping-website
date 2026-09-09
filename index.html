@@ -4,20 +4,37 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="ShopHub — premium trending products for a better lifestyle.">
-  <title>ShopHub — Trending Products</title>
+  <title>ShopHub — Premium Dropshipping Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
+  <div class="announcement">Free shipping on eligible orders · Secure checkout · Easy returns</div>
   <nav class="navbar">
     <div class="container nav-wrapper">
-      <a class="logo" href="#home"><i class="fa-solid fa-bag-shopping"></i><span>ShopHub</span></a>
-      <ul class="nav-links"><li><a href="#home">Home</a></li><li><a href="#products">Products</a></li><li><a href="#about">About</a></li><li><a href="#contact">Contact</a></li></ul>
-      <div class="nav-actions"><button id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button><button id="cartBtn" aria-label="Shopping cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></button><button aria-label="Account"><i class="fa-regular fa-user"></i></button></div>
+      <a class="logo" href="#home"><span class="logo-mark">S</span><span>ShopHub</span></a>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">Shop</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button id="searchBtn" aria-label="Search"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button id="cartBtn" aria-label="Shopping cart"><i class="fa-solid fa-cart-shopping"></i><span class="cart-count" id="cartCount">0</span></button>
+        <button id="accountBtn" aria-label="Account"><i class="fa-regular fa-user"></i></button>
+      </div>
     </div>
   </nav>
 
-  <div class="search-modal" id="searchModal"><div class="search-container"><input id="searchInput" class="search-input" type="search" placeholder="Search products..." autocomplete="off"><button id="closeSearch" class="close-search" aria-label="Close">&times;</button></div><div class="search-results" id="searchResults"></div></div>
+  <div class="search-modal" id="searchModal">
+    <div class="search-container"><input id="searchInput" class="search-input" type="search" placeholder="Search products..." autocomplete="off"><button id="closeSearch" class="close-search" aria-label="Close">&times;</button></div>
+    <div class="search-results" id="searchResults"></div>
+  </div>
 
   <main>
     <section class="hero" id="home">
@@ -31,11 +48,10 @@
           <div class="hero-benefit"><div class="icon"><i class="fa-solid fa-shield-halved"></i></div><strong>Secure</strong><small>Shopping</small></div>
           <div class="hero-benefit"><div class="icon"><i class="fa-solid fa-bag-shopping"></i></div><strong>Trending</strong><small>Collections</small></div>
         </div>
-        <div class="hero-buttons"><button class="cta-btn">Shop Now <i class="fa-solid fa-arrow-right"></i></button><a class="secondary-btn" href="#products">Explore Categories</a></div>
+        <div class="hero-buttons"><button class="cta-btn">Shop Now <i class="fa-solid fa-arrow-right"></i></button><a class="secondary-btn" href="#categories">Explore Categories</a></div>
         <div class="hero-signature">Good Things<br><span>For A Better You</span><b></b></div>
       </div>
-
-      <div class="hero-visual" aria-label="Premium lifestyle product collection">
+      <div class="hero-visual" aria-hidden="true">
         <div class="arch arch-one"></div><div class="arch arch-two"></div>
         <div class="plinth p1"></div><div class="plinth p2"></div><div class="plinth p3"></div><div class="plinth p4"></div>
         <div class="plant"><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i><i class="fa-solid fa-leaf"></i></div>
@@ -49,16 +65,39 @@
       </div>
     </section>
 
-    <section class="section" id="products"><div class="container"><h2 class="section-title">Featured Products</h2><p class="section-subtitle">Curated everyday essentials, smart gadgets and lifestyle products — presented in a clean premium shopping experience.</p><div class="filter-bar"><select id="categoryFilter" class="filter-select"><option value="">All Categories</option><option value="electronics">Electronics</option><option value="fashion">Fashion</option><option value="home">Home & Garden</option><option value="sports">Sports</option></select><select id="sortFilter" class="filter-select"><option value="newest">Newest</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="popular">Most Popular</option></select></div><div class="products-grid" id="productsGrid"></div></div></section>
+    <section class="section categories" id="categories">
+      <div class="container">
+        <h2 class="section-title">Shop By Category</h2>
+        <p class="section-subtitle">Discover hand-picked essentials across the categories customers love.</p>
+        <div class="category-grid">
+          <button class="category-card" data-category="electronics"><i class="fa-solid fa-headphones"></i><span>Electronics</span><small>Smart gadgets & audio</small></button>
+          <button class="category-card" data-category="fashion"><i class="fa-solid fa-shirt"></i><span>Fashion</span><small>Everyday style picks</small></button>
+          <button class="category-card" data-category="home"><i class="fa-solid fa-house"></i><span>Home & Garden</span><small>Useful home upgrades</small></button>
+          <button class="category-card" data-category="sports"><i class="fa-solid fa-dumbbell"></i><span>Sports</span><small>Fitness & active life</small></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="products">
+      <div class="container">
+        <div class="section-heading-row"><div><h2 class="section-title left">Featured Products</h2><p class="section-subtitle left">Trending products selected for everyday use and gifting.</p></div><a class="view-all" href="#products">View All <i class="fa-solid fa-arrow-right"></i></a></div>
+        <div class="filter-bar"><select id="categoryFilter" class="filter-select"><option value="">All Categories</option><option value="electronics">Electronics</option><option value="fashion">Fashion</option><option value="home">Home & Garden</option><option value="sports">Sports</option></select><select id="sortFilter" class="filter-select"><option value="newest">Newest</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="popular">Most Popular</option></select></div>
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+    </section>
+
+    <section class="section trust-strip"><div class="container trust-grid"><div><i class="fa-solid fa-truck-fast"></i><strong>Fast Delivery</strong><small>Reliable dispatch options</small></div><div><i class="fa-solid fa-shield-halved"></i><strong>Secure Payments</strong><small>Shop with confidence</small></div><div><i class="fa-solid fa-rotate-left"></i><strong>Easy Returns</strong><small>Simple return support</small></div><div><i class="fa-solid fa-headset"></i><strong>Customer Support</strong><small>We're here to help</small></div></div></section>
 
     <section class="section about-section" id="about"><div class="container"><h2 class="section-title">Good Things For A Better You</h2><div class="about-content"><div class="about-text"><p>ShopHub brings together useful, stylish and trending products in one simple storefront. The experience is designed to feel premium, fast and easy on every device.</p><ul class="features-list"><li><i class="fa-solid fa-check"></i> Curated trending collections</li><li><i class="fa-solid fa-check"></i> Fast delivery options</li><li><i class="fa-solid fa-check"></i> Secure shopping experience</li><li><i class="fa-solid fa-check"></i> Friendly customer support</li></ul></div><div class="about-image"><i class="fa-solid fa-store"></i></div></div></div></section>
+
+    <section class="newsletter"><div class="container newsletter-inner"><div><span class="eyebrow small">STAY IN THE LOOP</span><h2>Get new arrivals & special offers</h2><p>Join our mailing list for product drops and exclusive offers.</p></div><form id="newsletterForm"><input type="email" placeholder="Your email address" aria-label="Email address" required><button type="submit">Subscribe</button></form></div></section>
 
     <section class="section" id="contact"><div class="container"><h2 class="section-title">Get In Touch</h2><p class="section-subtitle">Have a question about a product or order? Send us a message.</p><div class="contact-content"><form class="contact-form" id="contactForm"><div class="form-group"><input type="text" placeholder="Your Name" required></div><div class="form-group"><input type="email" placeholder="Your Email" required></div><div class="form-group"><textarea placeholder="Your Message" rows="5" required></textarea></div><button class="submit-btn" type="submit">Send Message</button></form><div class="contact-info"><div class="info-card"><i class="fa-solid fa-envelope"></i><h3>Email</h3><p>support@shophub.com</p></div><div class="info-card"><i class="fa-solid fa-truck"></i><h3>Order Support</h3><p>Fast help for shipping and order questions.</p></div></div></div></div></section>
   </main>
 
-  <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-section"><h4>ShopHub</h4><p style="color:#bdb8b3">Trending products for a better lifestyle.</p></div><div class="footer-section"><h4>Shop</h4><ul><li><a href="#products">All Products</a></li><li><a href="#products">Collections</a></li></ul></div><div class="footer-section"><h4>Support</h4><ul><li><a href="#contact">Contact</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div><div class="footer-section"><h4>Follow Us</h4><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></div></div></div><div class="footer-bottom"><p>&copy; 2026 ShopHub. All rights reserved.</p></div></div></footer>
+  <footer class="footer"><div class="container"><div class="footer-content"><div class="footer-section"><h4>ShopHub</h4><p>Trending products for a better lifestyle.</p></div><div class="footer-section"><h4>Shop</h4><ul><li><a href="#products">All Products</a></li><li><a href="#categories">Categories</a></li><li><a href="#products">Collections</a></li></ul></div><div class="footer-section"><h4>Support</h4><ul><li><a href="#contact">Contact</a></li><li><a href="#">Shipping</a></li><li><a href="#">Returns</a></li></ul></div><div class="footer-section"><h4>Follow Us</h4><div class="social-links"><a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a></div></div></div><div class="footer-bottom"><p>&copy; 2026 ShopHub. All rights reserved.</p></div></div></footer>
 
-  <div class="cart-modal" id="cartModal"><div class="cart-content"><div class="cart-header"><h2>Shopping Cart</h2><button class="close-cart" id="closeCart" aria-label="Close">&times;</button></div><div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty</p></div><div class="cart-footer"><strong>Total: ₹<span id="cartTotal">0.00</span></strong><button class="checkout-btn">Proceed to Checkout</button></div></div></div>
+  <div class="cart-modal" id="cartModal"><div class="cart-content"><div class="cart-header"><h2>Shopping Cart</h2><button class="close-cart" id="closeCart" aria-label="Close">&times;</button></div><div class="cart-items" id="cartItems"><p class="empty-cart">Your cart is empty</p></div><div class="cart-footer"><strong>Total: ₹<span id="cartTotal">0.00</span></strong><button class="checkout-btn" id="checkoutBtn">Proceed to Checkout</button></div></div></div>
   <script src="script.js"></script>
 </body>
 </html>
